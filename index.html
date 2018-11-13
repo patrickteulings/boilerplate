@@ -1,0 +1,283 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boilerplate</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="./dist/style.css">
+
+</head>
+<body>
+    <section class="boilerplate-section boilerplate-hero">
+      <h1>BOILERPLATE</h1>
+    </section>
+    <section class="boilerplate-section boilerplate-flexwrap">
+      <div class="section__inner">
+        <div class="boilerplate-section__title">
+          <h1>Headings</h1>
+        </div>
+        <div class="boilerplate-flexwrap">
+          <div class="boilerplate-column boilerplate-column--description">
+            <h3>Headings</h3>
+            <p>You can define all your basic header styles in our config.</p>
+          </div>
+          <div class="boilerplate-column boilerplate-column--content">
+
+            <div class="boilerplate-column--content__row--heading">
+              <h1>h1</h1>
+            </div>
+            <div class="boilerplate-column--content__row--heading">
+              <h2>h2</h2>
+            </div>
+            <div class="boilerplate-column--content__row--heading">
+              <h3>h3</h3>
+            </div>
+            <div class="boilerplate-column--content__row--heading">
+              <h4>h4</h4>
+            </div>
+            <div class="boilerplate-column--content__row--heading">
+              <h5>h5</h5>
+            </div>
+            <div class="boilerplate-column--content__row--heading">
+              <h6>h6</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="boilerplate-flexwrap">
+      <div class="section__inner">
+      <div class="boilerplate-section__title">
+          <h1>Text sizes</h1>
+        </div>
+        <div class="boilerplate-flexwrap">
+          <div class="boilerplate-column boilerplate-column--description">
+            <h3>Text sizes</h3>
+            <p>Pre-define font-size (eg. 'small', 'medium', 'large' to enable consistent font-sizes to your application</p>
+            <pre>@include font('small')</pre>
+          </div>
+          <div class="boilerplate-column boilerplate-column--content">
+            <div class="boilerplate-column--content__row--heading">
+              <div class="text--small">Small text</div>
+            </div>
+            <div class="boilerplate-column--content__row--heading">
+              <div class="text--medium">Medium text</div>
+            </div>
+            <div class="boilerplate-column--content__row--heading">
+              <div class="text--big">Big text</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="boilerplate-section boilerplate-flexwrap">
+      <div class="section__inner">
+        <div class="boilerplate-section__title">
+          <h1>Buttons</h1>
+        </div>
+        <div class="boilerplate-flexwrap">
+          <div class="boilerplate-column boilerplate-column--description">
+            <h3>Button styles</h3>
+            <p>Our buttons</p>
+          </div>
+          <div class="boilerplate-column boilerplate-column--content">
+            <div class="boilerplate-column--content__row--heading">
+              <div class="btn btn-solid--primary">Button solid primary color</div>
+            </div>
+            <div class="boilerplate-column--content__row--heading">
+              <div class="btn btn-solid--secondary">Button solid secondary color</div>
+            </div>
+            <div class="boilerplate-column--content__row--heading">
+              <div class="btn btn-outlined--secondary">Button outlined secondary color</div>
+              <div class="btn btn--small btn-outlined--secondary">Button outlined secondary color</div>
+            </div>
+            <div class="boilerplate-column--content__row--heading">
+              <div class="btn btn-solid--secondary btn-ghosted">Ghosted button</div>
+            </div>
+            <div class="boilerplate-column--content__row--heading">
+                <div class="btn btn-quiet--secondary">Quiet button</div>
+              </div>
+            <div class="boilerplate-column--content__row--heading">
+              <div class="btn-group">
+                <div class="btn btn-solid--secondary btn-ghosted">Ghosted button</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section boilerplate-flexwrap">
+      <div class="section__inner">
+        <div class="boilerplate-section__title">
+          <h1>Pre defined font combinations</h1>
+        </div>
+        <div class="boilerplate-flexwrap">
+          <div class="boilerplate-column boilerplate-column--description">
+            <h3>Pre defined font combinations</h3>
+            <p>Define combinations of fonts, background-colors, line-heights etc, to use at will in your project. E.g. for captions, highlights, errors, etc</p>
+          </div>
+          <div class="boilerplate-column boilerplate-column--content">
+            <div class="boilerplate-cardwrap">
+              <div class="boilerplate-card">
+                <div class="boilerplate-fontcombi--caption">This could be a caption</div>
+              </div>
+              <div class="boilerplate-card">
+                <div class="boilerplate-fontcombi--warning">This could be a warning</div>
+                <pre>@include fontcombi('warning')</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="boilerplate-flexwrap">
+      <div class="section__inner">
+        <div class="boilerplate-section__title">
+          <h1>Pre defined color combinations</h1>
+        </div>
+        <div class="boilerplate-flexwrap">
+          <div class="boilerplate-column boilerplate-column--description">
+            <h3>Pre defined color combinations</h3>
+            <p>Use the predefined for-background combinations as a classname or as an include</p>
+            <pre>@include themecombi('warning')</pre>
+            <pre>class="section--warning"</pre>
+          </div>
+          <div class="boilerplate-column boilerplate-column--content">
+            <div class="boilerplate-cardwrap">
+              <div class="boilerplate-card boilerplate-card--themecombi">
+                <div class="boiler-themecombi-1">Theme combination primary</div>
+              </div>
+              <div class="boilerplate-card boilerplate-card--themecombi">
+                <div class="boiler-themecombi-2">Theme combination secondary</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="boilerplate-flexwrap">
+      <div class="section__inner">
+        <div class="boilerplate-section__title">
+          <h1>Javascript searchbox</h1>
+        </div>
+        <div class="boilerplate-flexwrap">
+          <div class="boilerplate-column boilerplate-column--description">
+            <h3>Searchbox</h3>
+            <p>A (javascript) searchbox with a reset button to clear the field after text has been entered.</p>
+          </div>
+          <div class="boilerplate-column boilerplate-column--content">
+            <form>
+              <div class="form-group input-text--wrap" data-module="searchbox" data-config='{"target":".js-input-text", "emptyTrigger":".js-empty-trigger"}'>
+                <input type="text" class="js-input-text" placeholder="search">
+                <span class="btn--reset-search js-empty-trigger" title="Reset field"><span class="close-cross"></span></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--primary">
+      <div class="section__inner">
+          Inner section <a href="tel:344">adad</a><a href="jnfsdk">dda</a>
+          <div class="iets__inner"></div>
+      </div>
+    </section>
+
+    <section class="section boilerplate-flexwrap">
+      <div class="section__inner">
+        <div class="boilerplate-section__title">
+          <h1>Article tag</h1>
+        </div>
+        <div class="boilerplate-flexwrap">
+          <div class="boilerplate-column boilerplate-column--description">
+            <h3>Article tag</h3>
+            <p>When wrapping header elements in a Article tag, all but then first element will receive a margin-top. Otherwise the margin will be '0'</p>
+          </div>
+          <div class="boilerplate-column boilerplate-column--content">
+            <article>
+              <h2>Heading</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quidem accusantium commodi. Asperiores modi, minus voluptatibus recusandae numquam inventore voluptate maiores optio iste consequuntur nulla ea quia aspernatur ipsam. Vero.</p>
+              <p>Ipsum corrupti expedita qui cupiditate minima sint, facilis aspernatur ullam quae provident mollitia quis eum fugiat veniam maxime eligendi? Adipisci doloribus sed ipsam cumque dolorum vel saepe distinctio in fugiat.</p>
+              <p>Repellat nostrum neque, aut accusamus non illum ipsum et perspiciatis repellendus dolore ullam dolorem nihil, excepturi id! Ad atque vero magnam numquam eius quas ipsa? Perspiciatis maiores esse dolores ipsum.</p>
+              <p>Quas corporis, odit quaerat asperiores neque, beatae dicta quam quia adipisci tempore modi sunt suscipit, est possimus. Dolorum ipsam hic, vel placeat fugiat asperiores ex deleniti temporibus itaque eligendi magnam!</p>
+              <h2>Heading</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quidem accusantium commodi. Asperiores modi, minus voluptatibus recusandae numquam inventore voluptate maiores optio iste consequuntur nulla ea quia aspernatur ipsam. Vero.</p>
+              <p>Ipsum corrupti expedita qui cupiditate minima sint, facilis aspernatur ullam quae provident mollitia quis eum fugiat veniam maxime eligendi? Adipisci doloribus sed ipsam cumque dolorum vel saepe distinctio in fugiat.</p>
+              <p>Repellat nostrum neque, aut accusamus non illum ipsum et perspiciatis repellendus dolore ullam dolorem nihil, excepturi id! Ad atque vero magnam numquam eius quas ipsa? Perspiciatis maiores esse dolores ipsum.</p>
+              <p>Quas corporis, odit quaerat asperiores neque, beatae dicta quam quia adipisci tempore modi sunt suscipit, est possimus. Dolorum ipsam hic, vel placeat fugiat asperiores ex deleniti temporibus itaque eligendi magnam!</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KITCHENSINK-->
+
+    <section class="boilerplate-section boilerplate-hero">
+      <h1>KITCHEN SINK</h1>
+    </section>
+    <section class="section">
+      <div class="section__inner">
+        <div class="boilerplate-section__title">
+          <h1>Card with multiple, nested, links</h1>
+        </div>
+        <div class="boilerplate-flexwrap">
+          <div class="boilerplate-column boilerplate-column--description">
+            <h3 class="card__link">Card</h3>
+            <p>This cards title has a link which expands the entire card. You can still add additional
+              links in the card though, without using JS to prevent all sorts of bubbling chaos.
+            </p>
+          </div>
+          <div class="boilerplate-column boilerplate-column--content">
+            <div class="boilerplate-card boilerplate-card--nested-links">
+              <div class="image-cover--wrap">
+                <img class="boilerplate-card--image" src="assets/dummy/taxi.jpg">
+              </div>
+              <h3 class="boilerplate-card--nested-links__title"><a href="#" class="boilerplate-card--nested-links__link">Nested link and a truncated title</a></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique deleniti praesentium optio, alias doloremque dicta aliquid sequi fugit nostrum perspiciatis saepe</p>
+              <div class="boilerplate-card--nested-links__categories">
+                <div class="boilerplate-card--nested-links__category"><a class="category__link" href="http://www.patrickteulings.nl">Webdevelopment</a></div>
+                <div class="boilerplate-card--nested-links__category"><a class="category__link" href="http://www.things.nl">User Experience</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section__inner">
+        <div class="boilerplate-section__title">
+          <h1>CSS Loaders</h1>
+        </div>
+        <div class="boilerplate-flexwrap">
+          <div class="boilerplate-column boilerplate-column--description">
+            <h3 class="card__link">Loaders</h3>
+            <p>Handy little loader to add to any element
+            </p>
+          </div>
+          <div class="boilerplate-column boilerplate-column--content">
+            <div class="boilerplate-cardwrap">
+              <div class="boilerplate-card boilerplate-card--loader-card">
+                <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                </svg>
+              </div>
+              <div class="boilerplate-card boilerplate-card--loader-card">
+                <div class="loader--bounce">
+                  <div class="ball"></div>
+                  <div class="ball"></div>
+                  <div class="ball"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script type="text/javascript" src="./dist/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+input[type="text"] {
+  border: 1px solid color('primary');
+  border-radius: 2px;
+  width: 100%;
+  @include innerspace(1rem);
+  @include font-size(16px);
+  padding-right: 40px;
+
+  &:focus {
+    outline-color: lighten(color('primary'),50%);
+  }
+}
+
+.input-text--wrap {
+  position: relative;
+
+  .btn--reset-search {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    @include size(21px);
+    border-radius: 50%;
+    background: color('primary');
+    cursor: pointer;
+
+    &.is-active {
+      display: block;
+    }
+
+    .close-cross {
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        height: 1px;
+        width: 60%;
+        margin-top: -1px;
+        background: #ffffff;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

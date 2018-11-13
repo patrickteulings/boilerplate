@@ -1,0 +1,279 @@
+body, html {
+  font-size: 16px; }
+
+/* ----------------------------------------
+  Our primary colors for this project
+---------------------------------------- */
+/* ----------------------------------------
+  Combinations for loop for theming
+  Beware, name must also be declared in $themes
+
+  Usage: color: colorcombi(warning) or
+  Usage: color: colorcombi(warning, background)
+---------------------------------------- */
+/* ----------------------------------------
+  Adds a predefined set of (color)
+  charactaristics to yourn element.
+  The sets are defined in _config.scss
+
+  Usage: @include themecombi(name)
+---------------------------------------- */
+/* ----------------------------------------
+  Add a prediefined set of font values
+  to your class. You can find the map
+  in _config.scss
+
+  Usage: @include fontcombi(combiname)
+---------------------------------------- */
+/* ----------------------------------------
+  Font size, recalculates your font-pixel
+  sizes to EM
+---------------------------------------- */
+/* ----------------------------------------
+  Font size, recalculates your font-pixel
+  sizes to EM
+---------------------------------------- */
+/* ----------------------------------------
+  Adds a padding to your element. You have
+  free choice of units. In my personal
+  experience, px or % are recommended
+
+  Usage: @include innerspace(10px) or
+  Usage: @include innerspace(10rem, 5rem)
+---------------------------------------- */
+/* ----------------------------------------
+  Simply defines width and/or height
+  When ony one parameter is given
+  width and height are equal;
+
+  Usage: @include size(20px);
+---------------------------------------- */
+/* ----------------------------------------
+  Prerenders sections based on global
+  color combinations
+---------------------------------------- */
+.primary {
+  background-color: #50873C;
+  color: #ffffff; }
+
+.secondary {
+  background-color: #383F51;
+  color: #ffffff; }
+
+.warning {
+  background-color: yellow;
+  color: white; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 100;
+  margin-top: 0;
+  margin-bottom: 0.5em; }
+
+h1 {
+  font-size: 56px;
+  font-size: 3.11111em; }
+
+h2 {
+  font-size: 48px;
+  font-size: 2.66667em; }
+
+h3 {
+  font-size: 36px;
+  font-size: 2em; }
+
+h4 {
+  font-size: 24px;
+  font-size: 1.33333em; }
+
+h5 {
+  font-size: 18px;
+  font-size: 1em; }
+
+h6 {
+  font-size: 16px;
+  font-size: 0.88889em; }
+
+/* ----------------------------------------
+  Used for pre-defining often used font
+  styling such as captions, quotes etc
+
+  See _mixins.scss for usage
+  Usage: @include fontcombi(name);
+---------------------------------------- */
+/* ----------------------------------------
+  Default button properties
+---------------------------------------- */
+.btn-outlined--primary, .btn-outlined--secondary, .btn-outlined--warning, .btn-solid--primary, .btn-solid--secondary, .btn-solid--warning {
+  border-radius: 2px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 10px;
+  transition: all 0.2s ease-out; }
+
+/* ----------------------------------------
+  Adjustment for outlined buttons to
+  achieve same height as a regular button
+---------------------------------------- */
+.btn-outlined--primary, .btn-outlined--secondary, .btn-outlined--warning {
+  padding: calc(10px - 1px) calc(10px - 1px); }
+
+/* ----------------------------------------
+  Plain solid button
+---------------------------------------- */
+.btn-solid--primary {
+  background: #50873C;
+  color: #ffffff; }
+  .btn-solid--primary:hover {
+    background: #65aa4c; }
+
+.btn-solid--secondary {
+  background: #383F51;
+  color: #ffffff; }
+  .btn-solid--secondary:hover {
+    background: #4d566f; }
+
+.btn-solid--warning {
+  background: yellow;
+  color: white; }
+  .btn-solid--warning:hover {
+    background: #ffff33; }
+
+/* ----------------------------------------
+  Outlined button
+---------------------------------------- */
+.btn-ghosted {
+  opacity: 0.2;
+  cursor: default;
+  pointer-events: none; }
+
+.btn-ghosted {
+  opacity: 0.2;
+  cursor: default;
+  pointer-events: none; }
+
+.btn-ghosted {
+  opacity: 0.2;
+  cursor: default;
+  pointer-events: none; }
+
+/* ----------------------------------------
+  Ghosted and inactive button
+---------------------------------------- */
+.btn-outlined--primary {
+  border: 1px solid #50873C;
+  color: #50873C; }
+  .btn-outlined--primary:hover {
+    background: #50873C;
+    color: #ffffff; }
+
+.btn-outlined--secondary {
+  border: 1px solid #383F51;
+  color: #383F51; }
+  .btn-outlined--secondary:hover {
+    background: #383F51;
+    color: #ffffff; }
+
+.btn-outlined--warning {
+  border: 1px solid yellow;
+  color: yellow; }
+  .btn-outlined--warning:hover {
+    background: yellow;
+    color: white; }
+
+input[type="text"] {
+  border: 1px solid #50873C;
+  border-radius: 2px;
+  width: 100%;
+  padding: 1rem;
+  font-size: 16px;
+  font-size: 0.88889em;
+  padding-right: 40px; }
+  input[type="text"]:focus {
+    outline-color: #dcedd5; }
+
+.input-text--wrap {
+  position: relative; }
+  .input-text--wrap .btn--reset-search {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: #50873C;
+    cursor: pointer; }
+    .input-text--wrap .btn--reset-search.is-active {
+      display: block; }
+    .input-text--wrap .btn--reset-search .close-cross::before, .input-text--wrap .btn--reset-search .close-cross::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      height: 1px;
+      width: 60%;
+      margin-top: -1px;
+      background: #ffffff; }
+    .input-text--wrap .btn--reset-search .close-cross::before {
+      transform: rotate(45deg); }
+    .input-text--wrap .btn--reset-search .close-cross::after {
+      transform: rotate(-45deg); }
+
+.flexwrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+.column--description {
+  flex: 0 1 auto;
+  width: auto;
+  padding: 1rem; }
+
+.column--content {
+  flex: 1 1 auto;
+  width: auto;
+  padding: 1rem; }
+
+.testPat {
+  background: #ff9900;
+  padding: 10px 10px; }
+
+.testBase {
+  background: #999999;
+  cursor: pointer; }
+
+.testCombi {
+  font-size: 20px;
+  font-size: 1.11111em;
+  background: yellow;
+  color: white; }
+
+.text--small {
+  font-size: 8px; }
+
+.text--medium {
+  font-size: 28px; }
+
+.text--big {
+  font-size: 56px; }
+
+.fontttest {
+  font-size: 33px;
+  font-size: 1.83333em; }
+
+.colortest {
+  color: white; }
+
+.bgcolortest {
+  background: yellow; }
+
+
+/*# sourceMappingURL=style.css.map*/

@@ -1,0 +1,119 @@
+
+
+/* ----------------------------------------
+  Cards base
+---------------------------------------- */
+
+.boilerplate-card {
+  position: relative;
+  @include innerspace(1rem);
+  @include card-shadow(1);
+  @include transition();
+}
+
+
+/* ----------------------------------------
+  Boilerplate Cardwrapper
+---------------------------------------- */
+
+.boilerplate-cardwrap {
+  display: flex;
+}
+
+/* ----------------------------------------
+  Boilerplate cards
+---------------------------------------- */
+
+.boilerplate-card {
+  &:not(:first-child) {
+    margin-left: 2rem;
+  }
+
+  &--nested-links {
+    width: 33.3333333%;
+    min-height: 300px;
+
+    &:hover {
+      @include card-shadow(3);
+
+      img {
+        width: 110%;
+      }
+    }
+  }
+
+  &--nested-links__title {
+    margin-top: 1em;
+  }
+
+  /*
+    The main card link with an :after pseudo to
+    span the entire card
+  */
+
+  &--nested-links__link {
+    display: inline-block;
+    width: 100%;
+    @include truncate();
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+  }
+
+  /* All other links should have a position relative and z-index */
+
+  &--nested-links__categories {
+    @include flex;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2;
+  }
+
+  &--nested-links__category {
+    margin-right: 1rem;
+
+    .category__link {
+      color: color('primary');
+
+      &:hover {
+        color: darken(color('secondary'),20%);
+      }
+    }
+  }
+}
+
+.image-cover--wrap {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+
+  img {
+
+    @extend %cover-image;
+    @include transition(all, 0.5s, $linear-easing);
+  }
+}
+
+/* ----------------------------------------
+  CSS loader card
+---------------------------------------- */
+
+.boilerplate-card {
+  &--loader-card {
+    width: 33.3333333%;
+    min-height: 200px;
+    @include flex-center('both');
+  }
+
+  &--themecombi {
+    @include innerspace(0);
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "off",
+    "strict": ["error", "global"],
+    "curly": "warn",
+    "space-before-blocks": ["error", "always"],
+    "arrow-spacing": "error",
+    "arrow-parens": ["error", "always"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "max-len": ["error", { "code": 160, "tabWidth": 4 }],
+    "yoda": "error",
+    "eqeqeq": ["error", "always", { "null": "ignore" }]
+  }
+}

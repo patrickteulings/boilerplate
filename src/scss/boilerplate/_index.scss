@@ -1,0 +1,122 @@
+// Test styles
+.wf-active {
+  body {
+    font-family: $primary-font-face;
+  }
+}
+
+@import
+  'cards';
+
+.boilerplate {
+  &-section {
+
+  }
+
+  &-section__title {
+    @include innerspace(1rem);
+  }
+
+  &-hero {
+    height: 100vh;
+    background: color('primary');
+    color: color('white');
+    @include flex-center('center');
+
+    h1 {
+      color: color('white');
+      font-weight: 700;
+    }
+  }
+
+  &-flexwrap {
+
+    @include mq('tablet', 'min') {
+      @include flex-center('horizontal');
+    }
+  }
+
+
+  &-column--description {
+    @include flex-child(0, 25%);
+    @include innerspace(1rem);
+  }
+
+  &-column--content {
+    @include innerspace(1rem);
+    @include flex-child(0, 75%);
+  }
+
+  &-column--content__row {
+    @include innerspace(1em 0);
+    border-bottom: 1px solid color('secondary');
+
+    &--heading {
+      @include innerspace(1em 0);
+      border-bottom: 1px solid color('secondary');
+
+      h1,h2,h3,h4,h5,h6 {
+        margin: 0;
+      }
+    }
+  }
+
+  &__title {
+    @include innerspace(0 2rem);
+  }
+
+}
+
+.boilerplate-fontcombi {
+  &--warning {
+    @include fontcombi('warning');
+    @include innerspace(10px);
+  }
+
+  &--caption {
+    @include fontcombi('caption');
+    @include innerspace(10px);
+  }
+}
+
+
+.testCombi {
+  @include font-size(20px);
+  @include themecombi('warning');
+}
+
+.text--small {
+  @include font(small);
+}
+
+.text--medium {
+  @include font(medium);
+}
+
+.text--big {
+  @include font('large');
+}
+
+.fontttest {
+  @include font-size(33px);
+}
+
+.colortest {
+  @include themecombi('warning'); // ThemeCombi
+}
+
+.bgcolortest {
+  background: colorcombi('warning', background);
+}
+
+.boiler {
+  &-themecombi-1 {
+    @include innerspace(2rem);
+    @include themecombi('primary');
+  }
+
+  &-themecombi-2 {
+    @include innerspace(2rem);
+    @include themecombi('secondary');
+  }
+}

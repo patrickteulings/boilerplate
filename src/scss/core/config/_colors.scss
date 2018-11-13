@@ -1,0 +1,42 @@
+/* ----------------------------------------
+  Our primary colors for this project
+---------------------------------------- */
+
+$primary-colors: (
+  'base': #000000,
+  'primary': #C8285C,
+  'secondary': #1398BD,
+  'warning': rgb(255, 255, 0),
+  'white': #ffffff,
+  'black': #111111,
+  'light' : #F1F1F1
+);
+
+/* ----------------------------------------
+  Combinations for loop for theming
+  Beware, name must also be declared in $themes
+
+  Usage: color: colorcombi(warning, background)
+
+  If you need to include both colors in a field, use
+  the mixin @themecombi('warning');
+---------------------------------------- */
+
+$color-combinations: (
+  'base': (
+    'background': map-get($primary-colors, 'primary'),
+    'color': map-get($primary-colors, 'white')
+  ),
+  'primary': (
+    'background': map-get($primary-colors, 'primary'),
+    'color': map-get($primary-colors, 'white'),
+  ),
+  'secondary': (
+    'background': map-get($primary-colors, 'secondary'),
+    'color': map-get($primary-colors, 'white'),
+  ),
+  'warning': (
+    'background': map-get($primary-colors, 'warning'),
+    'color': map-get($primary-colors, 'white'),
+  )
+);

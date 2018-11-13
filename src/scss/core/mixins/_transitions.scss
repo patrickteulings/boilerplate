@@ -1,0 +1,6 @@
+$default-easing: cubic-bezier(0.000, 0.325, 0.375, 0.915);
+$linear-easing: cubic-bezier(0.280, 0.475, 0.445, 0.675);
+
+@mixin transition($attr:all, $time:0.2s, $easing:$default-easing) {
+  transition: $attr $time $easing;
+}
