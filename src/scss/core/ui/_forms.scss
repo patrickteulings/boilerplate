@@ -1,4 +1,24 @@
 
+/* ----------------------------------------
+  FORMS BASE
+---------------------------------------- */
+
+form {
+  margin: 0;
+}
+
+
+/* ----------------------------------------
+  INPUT TEXT
+---------------------------------------- */
+
+.inputtext {
+  label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+}
+
 input[type="text"] {
   border: 1px solid color('primary');
   border-radius: 2px;
@@ -11,6 +31,110 @@ input[type="text"] {
     outline-color: lighten(color('primary'),50%);
   }
 }
+
+/* ----------------------------------------
+  RADIO BUTTONS
+---------------------------------------- */
+
+.radio {
+  display: block;
+  position: relative;
+}
+
+input[type="radio"] {
+  opacity: 0;
+
+  & + label {
+    margin-left: 0.5rem;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: calc(1rem - 2px);
+      height: calc(1rem - 2px);
+      border-radius: 1rem;
+      border: 1px solid color('primary');
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: calc(1rem - 8px);
+      height: calc(1rem - 8px);
+      border-radius: 1rem;
+      background: color('secondary');
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      opacity: 0;
+      @include transition();
+    }
+  }
+
+  &:checked + label {
+    &:before {
+      border: 1px solid color('secondary');
+    }
+
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+/* ----------------------------------------
+  CHECKBOXES
+---------------------------------------- */
+
+.checkbox {
+  display: block;
+  position: relative;
+
+  input[type="checkbox"] {
+    opacity: 0;
+
+    & + label {
+      margin-left: 0.5rem;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        @include size(calc(1rem - 2px));
+        border: 1px solid color('primary');
+        border-radius: 2px;
+      }
+
+      &:after {
+        content: "";
+        @include size(calc(1rem - 6px));
+        border-radius: 1px;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        background: color('secondary');
+        opacity: 0;
+        @include transition();
+      }
+    }
+
+    &:checked + label {
+      &:before {
+        border: 1px solid color('secondary');
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
 
 .input-text--wrap {
   position: relative;
