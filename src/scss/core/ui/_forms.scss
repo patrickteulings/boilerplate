@@ -136,6 +136,57 @@ input[type="radio"] {
 }
 
 
+/* ----------------------------------------
+  SELECT / OPTION BOX
+---------------------------------------- */
+
+.select-wrap {
+  position: relative;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .select {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 6px 5px 0 5px;
+      border-color: color('primary') transparent transparent transparent;
+    }
+  }
+
+  select {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    @include font-size(16px);
+    @include innerspace(1rem);
+    padding-right: 2rem;
+    border: 1px solid color('primary');
+    border-radius: 2px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: $primary-font-face;
+    font-weight: 100;
+
+    &:focus {
+      outline-color: lighten(color('primary'),0%);
+    }
+  }
+}
+
+
 .input-text--wrap {
   position: relative;
 
