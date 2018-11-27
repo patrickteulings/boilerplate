@@ -1,11 +1,12 @@
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#C8285C"/>
     <title>Boilerplate</title>
-    <!-- <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300" rel="stylesheet"> -->
     <link rel="stylesheet" type="text/css" href="./dist/style.css">
+    <link rel="manifest" href="/manifest.json">
 
 </head>
 <body>
@@ -159,25 +160,52 @@
     <section class="boilerplate-flexwrap">
       <div class="section__inner">
         <div class="boilerplate-section__title">
-          <h1>Javascript searchbox</h1>
+          <h1>Forms</h1>
         </div>
         <div class="boilerplate-flexwrap">
           <div class="boilerplate-column boilerplate-column--description">
-            <h3>Searchbox</h3>
-            <p>A (javascript) searchbox with a reset button to clear the field after text has been entered.</p>
+            <h3>Form Elements</h3>
+            <p>Accessible Custom styled Form elements.</p>
           </div>
           <div class="boilerplate-column boilerplate-column--content">
-            <form>
-              <div class="form-group input-text--wrap" data-module="searchbox" data-config='{"target":".js-input-text", "emptyTrigger":".js-empty-trigger"}'>
-                <input type="text" class="js-input-text" placeholder="search">
-                <span class="btn--reset-search js-empty-trigger" title="Reset field"><span class="close-cross"></span></span>
+            <div class="boilerplate-cardwrap">
+              <div class="boilerplate-card boilerplate-card--form">
+                <form action="">
+                  <div class="radio"><input type="radio" name="gender" value="male" id="male"><label for="male">Male</label></div>
+                  <div class="radio"><input type="radio" name="gender" value="female" id="female"><label for="female">Female</label></div>
+                  <div class="radio"><input type="radio" name="gender" value="other" id="other"><label for="other">Other</label></div>
+                </form>
               </div>
-            </form>
+              <div class="boilerplate-card boilerplate-card--form">
+                <form action="">
+                  <div class="checkbox"><input type="checkbox" name="pet" value="male" id="cat"><label for="cat">Cat</label></div>
+                  <div class="checkbox"><input type="checkbox" name="pet" value="female" id="dog"><label for="dog">Dog</label></div>
+                  <div class="checkbox"><input type="checkbox" name="pet" value="other" id="rabbit"><label for="rabbit">Rabbit</label></div>
+                </form>
+              </div>
+              <div class="boilerplate-card boilerplate-card--form">
+                <form action="">
+                  <div class="inputtext"><label for="formtext">Label</label><input type="text" placeholder="Insert text here" value="" id="formtext"></div>
+                </form>
+              </div>
+              <div class="boilerplate-card boilerplate-card--form">
+                <form action="">
+                  <div class="select-wrap">
+                    <label for="selectbox">Label</label>
+                    <div class="select">
+                      <select value="" id="selectbox">
+                        <option value="0">Select value</option>
+                        <option value="1">Select value 2</option>
+                      </select>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
     <section class="section section--primary">
       <div class="section__inner">
           Inner section <a href="tel:344">adad</a><a href="jnfsdk">dda</a>
@@ -233,7 +261,7 @@
           <div class="boilerplate-column boilerplate-column--content">
             <div class="boilerplate-card boilerplate-card--nested-links">
               <div class="image-cover--wrap">
-                <img class="boilerplate-card--image" src="assets/dummy/taxi.jpg">
+                <img class="boilerplate-card--image" src="assets/dummy/taxi.jpg" alt="taxi">
               </div>
               <h3 class="boilerplate-card--nested-links__title"><a href="#" class="boilerplate-card--nested-links__link">Nested link and a truncated title</a></h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique deleniti praesentium optio, alias doloremque dicta aliquid sequi fugit nostrum perspiciatis saepe</p>
@@ -276,6 +304,28 @@
         </div>
       </div>
     </section>
+    <section class="boilerplate-flexwrap">
+      <div class="section__inner">
+        <div class="boilerplate-section__title">
+          <h1>Javascript searchbox</h1>
+        </div>
+        <div class="boilerplate-flexwrap">
+          <div class="boilerplate-column boilerplate-column--description">
+            <h3>Searchbox</h3>
+            <p>A (javascript) searchbox with a reset button to clear the field after text has been entered.</p>
+          </div>
+          <div class="boilerplate-column boilerplate-column--content">
+            <form>
+              <div class="form-group input-text--wrap" data-module="searchbox" data-config='{"target":".js-input-text", "emptyTrigger":".js-empty-trigger"}'>
+                <input type="text" class="js-input-text" placeholder="search">
+                <span class="btn--reset-search js-empty-trigger" title="Reset field"><span class="close-cross"></span></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
 
     <script type="text/javascript" src="./dist/app.js"></script>
