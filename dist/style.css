@@ -1,6 +1,14 @@
 body, html {
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 100; }
 
+/* ----------------------------------------
+  Config
+---------------------------------------- */
+/* ----------------------------------------
+  Our global breakpoints
+---------------------------------------- */
 /* ----------------------------------------
   Our primary colors for this project
 ---------------------------------------- */
@@ -8,9 +16,27 @@ body, html {
   Combinations for loop for theming
   Beware, name must also be declared in $themes
 
-  Usage: color: colorcombi(warning) or
   Usage: color: colorcombi(warning, background)
+
+  If you need to include both colors in a field, use
+  the mixin @themecombi('warning');
 ---------------------------------------- */
+.section--base {
+  background: #C8285C;
+  color: #ffffff; }
+
+.section--primary {
+  background: #C8285C;
+  color: #ffffff; }
+
+.section--secondary {
+  background: #1398BD;
+  color: #ffffff; }
+
+.section--warning {
+  background: yellow;
+  color: #ffffff; }
+
 /* ----------------------------------------
   Adds a predefined set of (color)
   charactaristics to yourn element.
@@ -20,18 +46,30 @@ body, html {
 ---------------------------------------- */
 /* ----------------------------------------
   Add a prediefined set of font values
+  combined with other properties
   to your class. You can find the map
   in _config.scss
 
   Usage: @include fontcombi(combiname)
 ---------------------------------------- */
 /* ----------------------------------------
+  Add a prediefined font size
+  to your class. You can find the map
+  in _config.scss
+
+  Usage: @include font(type)
+---------------------------------------- */
+/* ----------------------------------------
   Font size, recalculates your font-pixel
   sizes to EM
 ---------------------------------------- */
 /* ----------------------------------------
   Font size, recalculates your font-pixel
   sizes to EM
+---------------------------------------- */
+/* ----------------------------------------
+  Adds an ellipis to overflowing (single
+  line) text.
 ---------------------------------------- */
 /* ----------------------------------------
   Adds a padding to your element. You have
@@ -40,6 +78,11 @@ body, html {
 
   Usage: @include innerspace(10px) or
   Usage: @include innerspace(10rem, 5rem)
+---------------------------------------- */
+/* ----------------------------------------
+  Defines the outer margins of an element
+  You can either use it with two or four
+  parameters
 ---------------------------------------- */
 /* ----------------------------------------
   Simply defines width and/or height
@@ -52,17 +95,21 @@ body, html {
   Prerenders sections based on global
   color combinations
 ---------------------------------------- */
+.base {
+  background-color: #C8285C;
+  color: #ffffff; }
+
 .primary {
-  background-color: #50873C;
+  background-color: #C8285C;
   color: #ffffff; }
 
 .secondary {
-  background-color: #383F51;
+  background-color: #1398BD;
   color: #ffffff; }
 
 .warning {
   background-color: yellow;
-  color: white; }
+  color: #ffffff; }
 
 h1,
 h2,
@@ -72,32 +119,51 @@ h5,
 h6 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 100;
-  margin-top: 0;
+  margin-top: 0em;
   margin-bottom: 0.5em; }
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article h6 {
+    margin-top: 1em; }
+    article h1:first-of-type,
+    article h2:first-of-type,
+    article h3:first-of-type,
+    article h4:first-of-type,
+    article h5:first-of-type,
+    article h6:first-of-type {
+      margin-top: 0em; }
 
 h1 {
-  font-size: 56px;
-  font-size: 3.11111em; }
+  font-size: 3.11111em;
+  font-size: 56px; }
 
 h2 {
-  font-size: 48px;
-  font-size: 2.66667em; }
+  font-size: 2.66667em;
+  font-size: 48px; }
 
 h3 {
-  font-size: 36px;
-  font-size: 2em; }
+  font-size: 2em;
+  font-size: 36px; }
 
 h4 {
-  font-size: 24px;
-  font-size: 1.33333em; }
+  font-size: 1.33333em;
+  font-size: 24px; }
 
 h5 {
-  font-size: 18px;
-  font-size: 1em; }
+  font-size: 1em;
+  font-size: 18px; }
 
 h6 {
-  font-size: 16px;
-  font-size: 0.88889em; }
+  font-size: 0.88889em;
+  font-size: 16px; }
+
+p {
+  margin: 0 0 1em 0;
+  line-height: 1.4em;
+  font-family: "Josefin Sans", sans-serif; }
 
 /* ----------------------------------------
   Used for pre-defining often used font
@@ -107,76 +173,199 @@ h6 {
   Usage: @include fontcombi(name);
 ---------------------------------------- */
 /* ----------------------------------------
+  Used for pre-defining often-used font sizes.
+  Warning; do not add anything but fontsize.
+
+  For other purposes use 'fontcombi'
+
+  See _mixins.scss for usage
+  Usage: @include textfont(name);
+---------------------------------------- */
+/**
+*
+* Basic anchor link styling
+*
+*/
+a {
+  color: inherit; }
+
+a[class*='__link'] {
+  text-decoration: none; }
+
+body, html {
+  padding: 0;
+  margin: 0; }
+
+/* ----------------------------------------
+  Our main section container will auto
+  center all elements
+---------------------------------------- */
+section.section {
+  display: flex;
+  justify-content: center; }
+
+/* ----------------------------------------
+  Every first element within a section
+  with - in it's - classname __inner
+  will be our container
+---------------------------------------- */
+section > [class*='__inner'] {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1140px; }
+
+/* ----------------------------------------
+  Helpers / Extendible classes
+---------------------------------------- */
+/**
+*
+* Image helper classes
+*
+*/
+.image-cover--wrap img {
+  width: 100%;
+  min-width: 101%;
+  height: 100%;
+  max-height: auto;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  display: block;
+  object-fit: cover;
+  transform: translate(-50%, -50%); }
+
+/* ----------------------------------------
+  Mixins
+---------------------------------------- */
+/* ----------------------------------------
+  Usage mobile first
+
+  @include mq('tablet','min')
+
+  Usage Mobile last
+
+  @include mq('tablet','max')
+
+  Usage to-from
+
+  @include mq('tablet','to', 'desktop')
+---------------------------------------- */
+/*
+
+  Defines the first levels of the material design card shadows
+
+*/
+/* ----------------------------------------
+  UI / User Interface
+---------------------------------------- */
+/* ----------------------------------------
   Default button properties
 ---------------------------------------- */
-.btn-outlined--primary, .btn-outlined--secondary, .btn-outlined--warning, .btn-solid--primary, .btn-solid--secondary, .btn-solid--warning {
+/* ----- Variables ----- */
+/* ----- Button base ----- */
+.btn {
   border-radius: 2px;
   display: inline-block;
   cursor: pointer;
-  padding: 10px 10px;
-  transition: all 0.2s ease-out; }
+  padding: 1em 1em;
+  transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915); }
 
 /* ----------------------------------------
   Adjustment for outlined buttons to
   achieve same height as a regular button
 ---------------------------------------- */
-.btn-outlined--primary, .btn-outlined--secondary, .btn-outlined--warning {
-  padding: calc(10px - 1px) calc(10px - 1px); }
+/* ----------------------------------------
+  Different button sizes,
+  complement at will...
+---------------------------------------- */
+.btn--small {
+  font-size: 0.66667em;
+  font-size: 12px; }
+
+.btn--medium {
+  font-size: 0.88889em;
+  font-size: 16px; }
+
+.btn--large {
+  font-size: 0.88889em;
+  font-size: 16px; }
+
+.btn--full {
+  width: 100%; }
 
 /* ----------------------------------------
   Plain solid button
 ---------------------------------------- */
+/* stylelint-disable max-nesting-depth */
+.btn-solid--base {
+  background: #C8285C;
+  color: #ffffff; }
+  .btn-solid--base:hover {
+    background: #db4978; }
+
 .btn-solid--primary {
-  background: #50873C;
+  background: #C8285C;
   color: #ffffff; }
   .btn-solid--primary:hover {
-    background: #65aa4c; }
+    background: #db4978; }
 
 .btn-solid--secondary {
-  background: #383F51;
+  background: #1398BD;
   color: #ffffff; }
   .btn-solid--secondary:hover {
-    background: #4d566f; }
+    background: #1bbbe8; }
 
 .btn-solid--warning {
   background: yellow;
-  color: white; }
+  color: #ffffff; }
   .btn-solid--warning:hover {
     background: #ffff33; }
 
 /* ----------------------------------------
-  Outlined button
+  Ghosted button
 ---------------------------------------- */
 .btn-ghosted {
-  opacity: 0.2;
+  opacity: 0.8;
   cursor: default;
   pointer-events: none; }
 
 .btn-ghosted {
-  opacity: 0.2;
+  opacity: 0.8;
   cursor: default;
   pointer-events: none; }
 
 .btn-ghosted {
-  opacity: 0.2;
+  opacity: 0.8;
+  cursor: default;
+  pointer-events: none; }
+
+.btn-ghosted {
+  opacity: 0.8;
   cursor: default;
   pointer-events: none; }
 
 /* ----------------------------------------
-  Ghosted and inactive button
+  Outlined button
 ---------------------------------------- */
+.btn-outlined--base {
+  border: 1px solid #C8285C;
+  color: #C8285C; }
+  .btn-outlined--base:hover {
+    background: #C8285C;
+    color: #ffffff; }
+
 .btn-outlined--primary {
-  border: 1px solid #50873C;
-  color: #50873C; }
+  border: 1px solid #C8285C;
+  color: #C8285C; }
   .btn-outlined--primary:hover {
-    background: #50873C;
+    background: #C8285C;
     color: #ffffff; }
 
 .btn-outlined--secondary {
-  border: 1px solid #383F51;
-  color: #383F51; }
+  border: 1px solid #1398BD;
+  color: #1398BD; }
   .btn-outlined--secondary:hover {
-    background: #383F51;
+    background: #1398BD;
     color: #ffffff; }
 
 .btn-outlined--warning {
@@ -184,18 +373,125 @@ h6 {
   color: yellow; }
   .btn-outlined--warning:hover {
     background: yellow;
-    color: white; }
+    color: #ffffff; }
+
+.btn-quiet--base {
+  color: #C8285C; }
+  .btn-quiet--base:hover {
+    color: #731735; }
+
+.btn-quiet--primary {
+  color: #C8285C; }
+  .btn-quiet--primary:hover {
+    color: #731735; }
+
+.btn-quiet--secondary {
+  color: #1398BD; }
+  .btn-quiet--secondary:hover {
+    color: #0a4d60; }
+
+.btn-quiet--warning {
+  color: yellow; }
+  .btn-quiet--warning:hover {
+    color: #999900; }
+
+/* stylelint-enable */
+/* ----------------------------------------
+  Button group - multiple buttons aside
+---------------------------------------- */
+/* ----------------------------------------
+  Material Design Preloader without
+  progress
+---------------------------------------- */
+.spinner {
+  animation: rotator 1.4s linear infinite;
+  width: 40px;
+  height: 40px; }
+  .spinner .path {
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    stroke-width: 4;
+    transform-origin: center;
+    animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite; }
+  .spinner.hidden {
+    display: none; }
+
+/* ----------------------------------------
+  Keyframe animations for Material
+  spinner
+---------------------------------------- */
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(270deg); } }
+
+@keyframes colors {
+  0% {
+    stroke: #C8285C; }
+  14.285714286% {
+    stroke: #C8285C; }
+  28.571428572% {
+    stroke: #C8285C; }
+  42.857142858% {
+    stroke: #C8285C; }
+  57.142857144% {
+    stroke: #C8285C; }
+  71.42857143% {
+    stroke: #C8285C; }
+  100% {
+    stroke: #C8285C; } }
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187; }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg); }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg); } }
+
+/* ----------------------------------------
+  Bouncing ball loader
+---------------------------------------- */
+.loader--bounce {
+  transform: translateY(35px); }
+
+.ball {
+  position: relative;
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: #F1F1F1; }
+  .ball:not(:last-child) {
+    margin-right: 0rem; }
+  .ball:nth-child(1) {
+    animation: jump .5s ease 0s infinite alternate; }
+  .ball:nth-child(2) {
+    animation: jump .5s ease 0.15s infinite alternate; }
+  .ball:nth-child(3) {
+    animation: jump .5s ease 0.25s infinite alternate; }
+
+@keyframes jump {
+  0% {
+    transform: scaleY(0.9); }
+  90% {
+    transform: translateY(-70px); }
+  100% {
+    transform: translateY(-70px); } }
 
 input[type="text"] {
-  border: 1px solid #50873C;
+  border: 1px solid #C8285C;
   border-radius: 2px;
   width: 100%;
   padding: 1rem;
-  font-size: 16px;
   font-size: 0.88889em;
+  font-size: 16px;
   padding-right: 40px; }
   input[type="text"]:focus {
-    outline-color: #dcedd5; }
+    outline-color: #fdf3f6; }
 
 .input-text--wrap {
   position: relative; }
@@ -208,7 +504,7 @@ input[type="text"] {
     width: 21px;
     height: 21px;
     border-radius: 50%;
-    background: #50873C;
+    background: #C8285C;
     cursor: pointer; }
     .input-text--wrap .btn--reset-search.is-active {
       display: block; }
@@ -226,54 +522,180 @@ input[type="text"] {
     .input-text--wrap .btn--reset-search .close-cross::after {
       transform: rotate(-45deg); }
 
-.flexwrap {
+.wf-active body {
+  font-family: "Josefin Sans", sans-serif; }
+
+/* ----------------------------------------
+  Cards base
+---------------------------------------- */
+.boilerplate-card {
+  position: relative;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915); }
+
+/* ----------------------------------------
+  Boilerplate Cardwrapper
+---------------------------------------- */
+.boilerplate-cardwrap {
+  display: flex; }
+
+/* ----------------------------------------
+  Boilerplate cards
+---------------------------------------- */
+.boilerplate-card {
+  /*
+    The main card link with an :after pseudo to
+    span the entire card
+  */
+  /* All other links should have a position relative and z-index */ }
+  .boilerplate-card:not(:first-child) {
+    margin-left: 2rem; }
+  .boilerplate-card--nested-links {
+    width: 33.3333333%;
+    min-height: 300px; }
+    .boilerplate-card--nested-links:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+      .boilerplate-card--nested-links:hover img {
+        width: 110%; }
+  .boilerplate-card--nested-links__title {
+    margin-top: 1em; }
+  .boilerplate-card--nested-links__link {
+    display: inline-block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .boilerplate-card--nested-links__link:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0; }
+  .boilerplate-card--nested-links__categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2; }
+  .boilerplate-card--nested-links__category {
+    margin-right: 1rem; }
+    .boilerplate-card--nested-links__category .category__link {
+      color: #C8285C; }
+      .boilerplate-card--nested-links__category .category__link:hover {
+        color: #0a4d60; }
+
+.image-cover--wrap {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  position: relative; }
+  .image-cover--wrap img {
+    transition: all 0.5s cubic-bezier(0.28, 0.475, 0.445, 0.675); }
+
+/* ----------------------------------------
+  CSS loader card
+---------------------------------------- */
+.boilerplate-card--loader-card {
+  width: 33.3333333%;
+  min-height: 200px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap; }
+  align-items: center;
+  justify-content: center; }
 
-.column--description {
+.boilerplate-card--themecombi {
+  padding: 0; }
+
+.boilerplate-section__title {
+  padding: 1rem; }
+
+.boilerplate-hero {
+  height: 100vh;
+  background: #C8285C;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .boilerplate-hero h1 {
+    color: #ffffff;
+    font-weight: 700; }
+
+@media (min-width: 600px) {
+  .boilerplate-flexwrap {
+    display: flex;
+    justify-content: center; } }
+
+.boilerplate-column--description {
   flex: 0 1 auto;
-  width: auto;
+  width: 25%;
   padding: 1rem; }
 
-.column--content {
-  flex: 1 1 auto;
-  width: auto;
-  padding: 1rem; }
+.boilerplate-column--content {
+  padding: 1rem;
+  flex: 0 1 auto;
+  width: 75%; }
 
-.testPat {
-  background: #ff9900;
-  padding: 10px 10px; }
+.boilerplate-column--content__row {
+  padding: 1em 0;
+  border-bottom: 1px solid #1398BD; }
+  .boilerplate-column--content__row--heading {
+    padding: 1em 0;
+    border-bottom: 1px solid #1398BD; }
+    .boilerplate-column--content__row--heading h1, .boilerplate-column--content__row--heading h2, .boilerplate-column--content__row--heading h3, .boilerplate-column--content__row--heading h4, .boilerplate-column--content__row--heading h5, .boilerplate-column--content__row--heading h6 {
+      margin: 0; }
 
-.testBase {
-  background: #999999;
-  cursor: pointer; }
+.boilerplate__title {
+  padding: 0 2rem; }
+
+.boilerplate-fontcombi--warning {
+  font-size: 18px;
+  background: #C8285C;
+  color: #ffffff;
+  padding: 10px; }
+
+.boilerplate-fontcombi--caption {
+  background: #b8b8b8;
+  font-size: 14px;
+  padding: 10px; }
 
 .testCombi {
-  font-size: 20px;
   font-size: 1.11111em;
+  font-size: 20px;
   background: yellow;
-  color: white; }
+  color: #ffffff; }
 
 .text--small {
-  font-size: 8px; }
+  font-size: 14px; }
 
 .text--medium {
-  font-size: 28px; }
+  font-size: 18px; }
 
 .text--big {
-  font-size: 56px; }
+  font-size: 24px; }
 
 .fontttest {
-  font-size: 33px;
-  font-size: 1.83333em; }
+  font-size: 1.83333em;
+  font-size: 33px; }
 
 .colortest {
-  color: white; }
+  background: yellow;
+  color: #ffffff; }
 
 .bgcolortest {
   background: yellow; }
+
+.boiler-themecombi-1 {
+  padding: 2rem;
+  background: #C8285C;
+  color: #ffffff; }
+
+.boiler-themecombi-2 {
+  padding: 2rem;
+  background: #1398BD;
+  color: #ffffff; }
 
 
 /*# sourceMappingURL=style.css.map*/
