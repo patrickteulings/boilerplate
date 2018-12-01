@@ -651,9 +651,6 @@ input[type="radio"] {
 .wf-active body {
   font-family: "Josefin Sans", sans-serif; }
 
-section {
-  border-bottom: 1px solid #d8d8d8; }
-
 /* ----------------------------------------
   Cards base
 ---------------------------------------- */
@@ -727,6 +724,19 @@ section {
     transition: all 0.5s cubic-bezier(0.28, 0.475, 0.445, 0.675); }
 
 /* ----------------------------------------
+  Color card
+---------------------------------------- */
+.boilerplate-card .color__swap {
+  height: 100px;
+  margin: -0.8rem -0.8rem 1rem -0.8rem; }
+  .boilerplate-card .color__swap--primary {
+    background: #C8285C; }
+  .boilerplate-card .color__swap--secondary {
+    background: #1398BD; }
+  .boilerplate-card .color__swap--warning {
+    background: yellow; }
+
+/* ----------------------------------------
   CSS loader card
 ---------------------------------------- */
 .boilerplate-card--loader-card {
@@ -738,6 +748,9 @@ section {
 
 .boilerplate-card--themecombi {
   padding: 0; }
+
+.boilerplate-section {
+  border-bottom: 1px solid #d8d8d8; }
 
 .boilerplate-section__title {
   padding: 1rem;
@@ -829,6 +842,14 @@ section {
   padding: 2rem;
   background: #1398BD;
   color: #ffffff; }
+
+/* ----------------------------------------
+  Pre-stling
+---------------------------------------- */
+pre {
+  font-size: 10px;
+  color: #919191;
+  margin: 0.5rem 0; }
 
 
 /*# sourceMappingURL=style.css.map*/
