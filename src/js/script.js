@@ -14,7 +14,7 @@ import * as WebFont from 'webfontloader'
 
 WebFont.load({
   google: {
-    families: ['Josefin Sans:100,400,700'],
+    families: ['Josefin Sans:100,300,700'],
   },
 });
 
@@ -25,7 +25,13 @@ for (let toggle of toggles) {
   toggle = new ElementToggle(toggle);
 }
 
-
+/**
+  *
+  * @desc A searchbox with reset button
+  * @param -
+  * @returns -
+  *
+  */
 
 const searchboxes = document.querySelectorAll('[data-module="searchbox"]');
 

@@ -25,6 +25,8 @@
 ---------------------------------------- */
 
 .boilerplate-card {
+  background: color('white');
+
   &:not(:first-child) {
     margin-left: 2rem;
   }

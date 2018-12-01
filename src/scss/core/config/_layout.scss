@@ -62,7 +62,7 @@ section {
   > [class*='__inner'] {
     // display: flex;
     // @include flex-child(1);
-    @include innerspace(2rem);
+    @include innerspace(4rem 2rem);
     width: 100%;
     max-width: 1140px;
   }

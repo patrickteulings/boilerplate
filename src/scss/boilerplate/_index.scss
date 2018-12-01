@@ -5,6 +5,10 @@
   }
 }
 
+section {
+  border-bottom: 1px solid darken(color('light'),10%);
+}
+
 @import
   'cards';
 
@@ -15,6 +19,9 @@
 
   &-section__title {
     @include innerspace(1rem);
+    padding-top: 0;
+    //border-bottom: 1px solid color('light');
+    //margin-bottom: 1rem;
   }
 
   &-hero {
@@ -43,8 +50,11 @@
   }
 
   &-column--content {
-    @include innerspace(1rem);
+    @include innerspace(2rem);
     @include flex-child(0, 75%);
+    background: lighten(color('light'),2%);
+    border-radius: 5px;
+    //@include card-shadow(1);
   }
 
   &-column--content__row {
