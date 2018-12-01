@@ -104,6 +104,37 @@
   }
 }
 
+
+/* ----------------------------------------
+  Color card
+---------------------------------------- */
+
+.boilerplate-card {
+  &__color {
+
+  }
+
+  .color {
+    &__swap {
+      height: 100px;
+      margin: -0.8rem -0.8rem 1rem -0.8rem;
+
+      &--primary {
+        background: color('primary');
+      }
+
+      &--secondary {
+        background: color('secondary');
+      }
+
+      &--warning {
+        background: color('warning');
+      }
+    }
+  }
+}
+
+
 /* ----------------------------------------
   CSS loader card
 ---------------------------------------- */

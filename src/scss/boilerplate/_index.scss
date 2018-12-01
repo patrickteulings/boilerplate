@@ -5,23 +5,18 @@
   }
 }
 
-section {
-  border-bottom: 1px solid darken(color('light'),10%);
-}
 
 @import
   'cards';
 
 .boilerplate {
   &-section {
-
+    border-bottom: 1px solid darken(color('light'),10%);
   }
 
   &-section__title {
     @include innerspace(1rem);
     padding-top: 0;
-    //border-bottom: 1px solid color('light');
-    //margin-bottom: 1rem;
   }
 
   &-hero {
@@ -129,4 +124,13 @@ section {
     @include innerspace(2rem);
     @include themecombi('secondary');
   }
+}
+
+/* ----------------------------------------
+  Pre-stling
+---------------------------------------- */
+pre {
+  font-size: 10px;
+  color: lighten(color('black'), 50%);
+  margin: 0.5rem 0;
 }
