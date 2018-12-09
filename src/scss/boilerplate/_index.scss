@@ -7,7 +7,8 @@
 
 
 @import
-  'cards';
+  'cards',
+  'socials';
 
 .boilerplate {
   &-section {
@@ -127,7 +128,7 @@
 }
 
 /* ----------------------------------------
-  Pre-stling
+  Pre-code styling
 ---------------------------------------- */
 pre {
   font-size: 10px;

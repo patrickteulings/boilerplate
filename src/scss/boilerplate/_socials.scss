@@ -1,0 +1,36 @@
+/* ----------------------------------------
+  Boilerplate Socials
+---------------------------------------- */
+
+.boilerplate {
+
+}
+
+.boilerplate-social {
+  &__item {
+    display: inline-block;
+    @include innerspace(0.5em);
+    background: color('white');
+    border-radius: 2px;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: 0.5em;
+    }
+
+    svg {
+      @include size(1em);
+      @include transition();
+    }
+
+    svg * {
+      fill: color('primary');
+    }
+
+    &:hover {
+      svg * {
+        fill: color('secondary');
+      }
+    }
+  }
+}

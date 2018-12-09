@@ -749,6 +749,26 @@ input[type="radio"] {
 .boilerplate-card--themecombi {
   padding: 0; }
 
+/* ----------------------------------------
+  Boilerplate Socials
+---------------------------------------- */
+.boilerplate-social__item {
+  display: inline-block;
+  padding: 0.5em;
+  background: #ffffff;
+  border-radius: 2px;
+  cursor: pointer; }
+  .boilerplate-social__item:not(:first-child) {
+    margin-left: 0.5em; }
+  .boilerplate-social__item svg {
+    width: 1em;
+    height: 1em;
+    transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915); }
+  .boilerplate-social__item svg * {
+    fill: #C8285C; }
+  .boilerplate-social__item:hover svg * {
+    fill: #1398BD; }
+
 .boilerplate-section {
   border-bottom: 1px solid #d8d8d8; }
 
@@ -844,7 +864,7 @@ input[type="radio"] {
   color: #ffffff; }
 
 /* ----------------------------------------
-  Pre-stling
+  Pre-code styling
 ---------------------------------------- */
 pre {
   font-size: 10px;

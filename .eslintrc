@@ -18,7 +18,7 @@
     "arrow-parens": ["error", "always"],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "comma-spacing": ["error", { "before": false, "after": true }],
-    "max-len": ["error", { "code": 160, "tabWidth": 4 }],
+    "max-len": ["error", { "code": 320, "tabWidth": 4 }],
     "yoda": "error",
     "eqeqeq": ["error", "always", { "null": "ignore" }]
   }
