@@ -648,6 +648,53 @@ input[type="radio"] {
     .input-text--wrap .btn--reset-search .close-cross::after {
       transform: rotate(-45deg); }
 
+/* ----------------------------------------
+  Tabs component
+
+  Includes responsive behaviour
+---------------------------------------- */
+/* ----------------------------------------
+  tabs base
+---------------------------------------- */
+.tabs {
+  position: relative; }
+
+/* ----------------------------------------
+  tabs
+---------------------------------------- */
+.tabs {
+  /* TAB PANELS */ }
+  .tabs__nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transform: translateY(1px);
+    position: relative;
+    z-index: 2; }
+  .tabs__nav-item {
+    display: inline-block;
+    flex: 0 1 auto;
+    margin-right: 0.4em; }
+  .tabs__tab {
+    padding: 0.8em 1em;
+    border: 1px solid #C8285C;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    display: inline-block; }
+    .tabs__tab.active {
+      background: #ffffff;
+      border-bottom-color: #ffffff; }
+  .tabs__panels {
+    position: relative; }
+  .tabs__panel {
+    display: none;
+    background: #ffffff;
+    padding: 1rem;
+    border: 1px solid #C8285C; }
+    .tabs__panel.active {
+      display: block; }
+
 .wf-active body {
   font-family: "Josefin Sans", sans-serif; }
 
@@ -768,6 +815,19 @@ input[type="radio"] {
     fill: #C8285C; }
   .boilerplate-social__item:hover svg * {
     fill: #1398BD; }
+
+/* ----------------------------------------
+  These items are used when copying a
+  URL to your clipboard
+---------------------------------------- */
+.socials__url {
+  position: absolute;
+  left: -99999px; }
+
+.socials__url--alert {
+  display: none; }
+  .socials__url--alert.is-visible {
+    display: block; }
 
 .boilerplate-section {
   border-bottom: 1px solid #d8d8d8; }
