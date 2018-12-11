@@ -34,3 +34,21 @@
     }
   }
 }
+
+/* ----------------------------------------
+  These items are used when copying a
+  URL to your clipboard
+---------------------------------------- */
+
+.socials__url {
+  position: absolute;
+  left: -99999px;
+}
+
+.socials__url--alert {
+  display: none;
+
+  &.is-visible {
+    display: block;
+  }
+}

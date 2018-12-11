@@ -3,6 +3,7 @@
 import ElementToggle from './modules/toggle/ElementToggle';
 import Searchbox from './elements/EmptySearchbox';
 import SocialShare from './elements/SocialShare';
+import Tabs from './components/tabs/Tabs';
 import * as WebFont from 'webfontloader'
 
 /**
@@ -51,3 +52,15 @@ const shareIcons = document.querySelectorAll('[data-module="socialshare"]');
 for (let shareIcon of shareIcons) {
   shareIcon = new SocialShare(shareIcon);
 }
+
+/**
+  *
+  * @desc A tab component
+  *
+  */
+
+ const tabElements = document.querySelectorAll('[data-module="tabs"]');
+
+ for (let tabs of tabElements) {
+   tabs = new Tabs(tabs);
+ }

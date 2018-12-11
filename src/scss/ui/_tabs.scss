@@ -1,0 +1,70 @@
+/* ----------------------------------------
+  Tabs component
+
+  Includes responsive behaviour
+---------------------------------------- */
+
+/* ----------------------------------------
+  tabs base
+---------------------------------------- */
+
+.tabs {
+  position: relative;
+}
+
+/* ----------------------------------------
+  tabs
+---------------------------------------- */
+
+.tabs {
+  &__nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transform: translateY(1px);
+    position: relative;
+    z-index: 2;
+  }
+
+  &__nav-item {
+    display: inline-block;
+    flex: 0 1 auto;
+    margin-right: 0.4em;
+  }
+
+  &__tab {
+    @include innerspace(0.8em, 1em);
+    border: 1px solid color('primary');
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    display: inline-block;
+
+    &:hover {
+
+    }
+
+    &.active {
+      background: color('white');
+      border-bottom-color: color('white');
+    }
+  }
+
+
+  /* TAB PANELS */
+
+  &__panels {
+    position: relative;
+  }
+
+  &__panel {
+    display: none;
+    background: color('white');
+    @include innerspace(1rem);
+    border: 1px solid color('primary');
+
+    &.active {
+      display: block;
+    }
+  }
+}

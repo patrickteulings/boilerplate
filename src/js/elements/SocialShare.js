@@ -56,23 +56,28 @@ export default class SocialShare {
     if (this.type === 'whatsapp') {
       shareURL = 'https//api.whatsapp.com/send?text=';
     }
+    if (this.type === 'linkedin') {
+      shareURL = 'https://www.linkedin.com/sharing/share-offsite/?url=';
+    }
+
+
 
     window.open(shareURL + this.url, this.type.charAt(0).toUpperCase(), 'height=450, width=550, top=' + (window.innerHeight / 2 - 225) + ', left=' + window.innerWidth / 2 + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
   }
 
   copyToClipBoard() {
-    var share_url = document.querySelector('.share__url');
+    var share_url = document.querySelector('.socials__url');
     var selection = window.getSelection();
     var range = document.createRange();
     share_url.innerHTML = this.url;
-    range.selectNodeContents(document.querySelector('.share__url'));
+    range.selectNodeContents(document.querySelector('.socials__url'));
     selection.removeAllRanges();
     selection.addRange(range);
     document.execCommand('copy');
     selection.removeAllRanges();
 
     // Show alert
-    var alertElem = document.querySelector('.share__copied-alert');
+    var alertElem = document.querySelector('.socials__url--alert');
     alertElem.classList.add('is-visible');
 
     setTimeout(function () {
