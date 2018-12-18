@@ -61,7 +61,7 @@ $basefontsize: 18px;
 }
 
 /* ----------------------------------------
-  Font size, recalculates your font-pixel
+  Line height, recalculates your font-pixel
   sizes to EM
 ---------------------------------------- */
 
@@ -77,6 +77,25 @@ $basefontsize: 18px;
 
 @mixin truncate() {
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ----------------------------------------
+  Adds an ellipis to overflowing (single
+  line) text.
+---------------------------------------- */
+
+@mixin truncate-multiline($lines:3, $line-height: 1.4, $font-size:$basefontsize) {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 400px;
+  height: calc($font-size * $line-height * $lines); /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }

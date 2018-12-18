@@ -48,6 +48,7 @@ export default class EmptySearchbox {
 
   }
 
+
   /**
   *
   * @desc Check whether the input field is empty or not
@@ -74,4 +75,5 @@ export default class EmptySearchbox {
     this.target.value = '';
     this.trigger.classList.remove('is-active');
   }
+
 }
