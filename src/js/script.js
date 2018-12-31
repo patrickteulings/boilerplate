@@ -4,7 +4,12 @@ import ElementToggle from './modules/toggle/ElementToggle';
 import Searchbox from './elements/EmptySearchbox';
 import SocialShare from './elements/SocialShare';
 import Tabs from './components/tabs/Tabs';
-import * as WebFont from 'webfontloader'
+import Accordion from './components/accordion/Accordion';
+import * as WebFont from 'webfontloader';
+import inView from 'in-view';
+
+
+
 
 /**
   *
@@ -64,3 +69,27 @@ for (let shareIcon of shareIcons) {
  for (let tabs of tabElements) {
    tabs = new Tabs(tabs);
  }
+
+
+ /**
+  *
+  * @desc A accordion component
+  *
+  */
+
+ const accordions = document.querySelectorAll('[data-module="accordion"]');
+
+ for (let accordion of accordions) {
+   accordion = new Accordion(accordion);
+ }
+
+ // const selector = document.querySelectorAll('.section');
+
+ inView('.section')
+  .on('enter', (el) => {
+    el.classList.add('inview');
+  })
+  .on('exit', (el) => {
+    el.classList.remove('inview');
+  });
+

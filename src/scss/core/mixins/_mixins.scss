@@ -16,6 +16,7 @@ $basefontsize: 18px;
   }
 };
 
+
 /* ----------------------------------------
   Add a prediefined set of font values
   combined with other properties
@@ -25,7 +26,6 @@ $basefontsize: 18px;
   Usage: @include fontcombi(combiname)
 ---------------------------------------- */
 
-
 @mixin fontcombi($type:base) {
   $selected: map-get($fontcombinations, $type);
 
@@ -33,6 +33,42 @@ $basefontsize: 18px;
     #{$key}: $value;
   }
 };
+
+
+/* ----------------------------------------
+  Adds fontsmoothing to your project
+
+  Usage: @include fontsmoothing()
+---------------------------------------- */
+
+@mixin fontsmoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+}
+
+
+/* ----------------------------------------
+  Change all header styles from $start to
+  $end at one go
+
+  Usage:
+
+  @include heading(1,6) {
+    // Insert styles here
+  }
+---------------------------------------- */
+
+@mixin heading($start:1, $end:6) {
+  @for $i from $start through $end {
+    h#{$i} {
+      @content;
+    }
+  }
+};
+
 
 /* ----------------------------------------
   Add a prediefined font size
@@ -50,6 +86,7 @@ $basefontsize: 18px;
   }
 };
 
+
 /* ----------------------------------------
   Font size, recalculates your font-pixel
   sizes to EM
@@ -59,6 +96,7 @@ $basefontsize: 18px;
   font-size: #{$px / $basefontsize}em;
   font-size: $px;
 }
+
 
 /* ----------------------------------------
   Line height, recalculates your font-pixel
@@ -70,6 +108,7 @@ $basefontsize: 18px;
   line-height: #{$px / $basefontsize}em;
 }
 
+
 /* ----------------------------------------
   Adds an ellipis to overflowing (single
   line) text.
@@ -80,6 +119,7 @@ $basefontsize: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 
 /* ----------------------------------------
   Adds an ellipis to overflowing (single
@@ -100,6 +140,7 @@ $basefontsize: 18px;
   text-overflow: ellipsis;
 }
 
+
 /* ----------------------------------------
   Adds a padding to your element. You have
   free choice of units. In my personal
@@ -117,6 +158,7 @@ $basefontsize: 18px;
     padding: $horizontal;
   }
 }
+
 
 /* ----------------------------------------
   Defines the outer margins of an element
@@ -152,6 +194,7 @@ $basefontsize: 18px;
     height: $width;
   }
 }
+
 
 /* ----------------------------------------
   Prerenders sections based on global

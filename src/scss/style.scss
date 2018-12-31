@@ -5,18 +5,19 @@ body, html {
   font-weight: 300;
 }
 
+
 /* ----------------------------------------
   Config
 ---------------------------------------- */
 
 @import
+  'core/config/reset',
   'core/config/breakpoints',
   'core/config/colors',
   'core/functions/functions',
   'core/mixins/mixins',
   'core/config/fonts',
-  'core/config/anchors',
-  'core/config/layout';
+  'core/config/anchors';
 
 
 /* ----------------------------------------
@@ -35,7 +36,8 @@ body, html {
   'core/mixins/breakpoints',
   'core/mixins/transitions',
   'core/mixins/colors',
-  'core/mixins/material-shadows';
+  'core/mixins/material-shadows',
+  'core/config/layout';
 
 /* ----------------------------------------
   UI / User Interface
@@ -45,6 +47,7 @@ body, html {
   'core/ui/buttons',
   'core/ui/loaders',
   'core/ui/forms',
+  'core/ui/accordion',
   'ui/tabs';
 
 

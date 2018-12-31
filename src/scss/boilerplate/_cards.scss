@@ -32,8 +32,11 @@
   }
 
   &--nested-links {
-    width: 33.3333333%;
     min-height: 300px;
+
+    @include mq('tablet','min') {
+      width: 33.3333333%;
+    }
 
     &:hover {
       @include card-shadow(3);
@@ -153,9 +156,13 @@
 
 .boilerplate-card {
   &--loader-card {
-    width: 33.3333333%;
+    width: 50%;
     min-height: 200px;
     @include flex-center('both');
+
+    @include mq('tablet','min') {
+      width: 33.3333333%;
+    }
   }
 
   &--themecombi {

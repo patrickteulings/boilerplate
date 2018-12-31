@@ -2,6 +2,12 @@
 .wf-active {
   body {
     font-family: $primary-font-face;
+    @include fontsmoothing();
+    @include mq('tablet','max') {
+      @include heading(1,2) {
+        @include font-size(30px);
+      }
+    }
   }
 }
 
@@ -18,6 +24,11 @@
   &-section__title {
     @include innerspace(1rem);
     padding-top: 0;
+
+    h1 {
+      width: 100%;
+      @include truncate();
+    }
   }
 
   &-hero {
@@ -25,6 +36,7 @@
     background: color('primary');
     color: color('white');
     @include flex-center('center');
+    @include innerspace(0, 2rem);
 
     h1 {
       color: color('white');
@@ -41,16 +53,23 @@
 
 
   &-column--description {
-    @include flex-child(0, 25%);
+    @include flex-child(0, 100%);
     @include innerspace(1rem);
+
+    @include mq('tablet','min') {
+      @include flex-child(0, 25%);
+    }
   }
 
   &-column--content {
     @include innerspace(2rem);
-    @include flex-child(0, 75%);
+    @include flex-child(0, 100%);
     background: lighten(color('light'),2%);
     border-radius: 5px;
-    //@include card-shadow(1);
+
+    @include mq('tablet', 'min') {
+      @include flex-child(0, 75%);
+    }
   }
 
   &-column--content__row {

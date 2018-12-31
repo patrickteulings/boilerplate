@@ -11,6 +11,7 @@
   @return null;
 }
 
+
 @function color($name) {
   @return map-get($primary-colors, $name);
 }
