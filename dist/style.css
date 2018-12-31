@@ -6,6 +6,51 @@ body, html {
 /* ----------------------------------------
   Config
 ---------------------------------------- */
+div {
+  box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 /* ----------------------------------------
   Our global breakpoints
 ---------------------------------------- */
@@ -53,6 +98,21 @@ body, html {
   Usage: @include fontcombi(combiname)
 ---------------------------------------- */
 /* ----------------------------------------
+  Adds fontsmoothing to your project
+
+  Usage: @include fontsmoothing()
+---------------------------------------- */
+/* ----------------------------------------
+  Change all header styles from $start to
+  $end at one go
+
+  Usage:
+
+  @include heading(1,6) {
+    // Insert styles here
+  }
+---------------------------------------- */
+/* ----------------------------------------
   Add a prediefined font size
   to your class. You can find the map
   in _config.scss
@@ -64,8 +124,12 @@ body, html {
   sizes to EM
 ---------------------------------------- */
 /* ----------------------------------------
-  Font size, recalculates your font-pixel
+  Line height, recalculates your font-pixel
   sizes to EM
+---------------------------------------- */
+/* ----------------------------------------
+  Adds an ellipis to overflowing (single
+  line) text.
 ---------------------------------------- */
 /* ----------------------------------------
   Adds an ellipis to overflowing (single
@@ -192,28 +256,6 @@ a {
 a[class*='__link'] {
   text-decoration: none; }
 
-body, html {
-  padding: 0;
-  margin: 0; }
-
-/* ----------------------------------------
-  Our main section container will auto
-  center all elements
----------------------------------------- */
-section.section {
-  display: flex;
-  justify-content: center; }
-
-/* ----------------------------------------
-  Every first element within a section
-  with - in it's - classname __inner
-  will be our container
----------------------------------------- */
-section > [class*='__inner'] {
-  padding: 4rem 2rem;
-  width: 100%;
-  max-width: 1140px; }
-
 /* ----------------------------------------
   Helpers / Extendible classes
 ---------------------------------------- */
@@ -255,6 +297,35 @@ section > [class*='__inner'] {
   Defines the first levels of the material design card shadows
 
 */
+body, html {
+  padding: 0;
+  margin: 0;
+  height: 100%; }
+
+/* ----------------------------------------
+  Our main section container will auto
+  center all elements
+---------------------------------------- */
+section.section {
+  display: flex;
+  justify-content: center;
+  transition: all 0.6s cubic-bezier(0, 0.325, 0.375, 0.915) 0s;
+  margin-top: 60px;
+  opacity: 0; }
+  section.section.inview {
+    margin-top: 0;
+    opacity: 1; }
+
+/* ----------------------------------------
+  Every first element within a section
+  with - in it's - classname __inner
+  will be our container
+---------------------------------------- */
+section > [class*='__inner'] {
+  padding: 4rem 2rem;
+  width: 100%;
+  max-width: 1140px; }
+
 /* ----------------------------------------
   UI / User Interface
 ---------------------------------------- */
@@ -268,7 +339,7 @@ section > [class*='__inner'] {
   display: inline-block;
   cursor: pointer;
   padding: 1em 1em;
-  transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915); }
+  transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s; }
 
 /* ----------------------------------------
   Adjustment for outlined buttons to
@@ -538,7 +609,7 @@ input[type="radio"] {
       top: 4px;
       left: 4px;
       opacity: 0;
-      transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915); }
+      transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s; }
   input[type="radio"]:checked + label:before {
     border: 1px solid #1398BD; }
   input[type="radio"]:checked + label:after {
@@ -574,7 +645,7 @@ input[type="radio"] {
         left: 3px;
         background: #1398BD;
         opacity: 0;
-        transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915); }
+        transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s; }
     .checkbox input[type="checkbox"]:checked + label:before {
       border: 1px solid #1398BD; }
     .checkbox input[type="checkbox"]:checked + label:after {
@@ -649,6 +720,17 @@ input[type="radio"] {
       transform: rotate(-45deg); }
 
 /* ----------------------------------------
+  Accordion Base
+---------------------------------------- */
+.accordion dd {
+  margin-left: 0; }
+
+.accordion .panel {
+  display: none; }
+  .accordion .panel.active {
+    display: block; }
+
+/* ----------------------------------------
   Tabs component
 
   Includes responsive behaviour
@@ -668,23 +750,38 @@ input[type="radio"] {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
     transform: translateY(1px);
     position: relative;
     z-index: 2; }
+    @media (min-width: 600px) {
+      .tabs__nav {
+        display: flex; } }
   .tabs__nav-item {
-    display: inline-block;
-    flex: 0 1 auto;
-    margin-right: 0.4em; }
+    display: block; }
+    @media (min-width: 600px) {
+      .tabs__nav-item {
+        display: inline-block;
+        flex: 0 1 auto;
+        margin-right: 0.4em; } }
+    .tabs__nav-item:first-child .tabs__tab {
+      border-top-width: 1px; }
   .tabs__tab {
     padding: 0.8em 1em;
+    transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s;
     border: 1px solid #C8285C;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
-    display: inline-block; }
+    border-top-width: 0px;
+    display: block; }
+    @media (min-width: 600px) {
+      .tabs__tab {
+        display: inline-block;
+        border-top-width: 1px; } }
     .tabs__tab.active {
-      background: #ffffff;
-      border-bottom-color: #ffffff; }
+      background: #ffffff; }
+      @media (min-width: 600px) {
+        .tabs__tab.active {
+          border-bottom-color: #ffffff; } }
   .tabs__panels {
     position: relative; }
   .tabs__panel {
@@ -696,7 +793,19 @@ input[type="radio"] {
       display: block; }
 
 .wf-active body {
-  font-family: "Josefin Sans", sans-serif; }
+  font-family: "Josefin Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; }
+  @media (max-width: 600px) {
+    .wf-active body h1 {
+      font-size: 1.66667em;
+      font-size: 30px; }
+    .wf-active body h2 {
+      font-size: 1.66667em;
+      font-size: 30px; } }
 
 /* ----------------------------------------
   Cards base
@@ -705,7 +814,7 @@ input[type="radio"] {
   position: relative;
   padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915); }
+  transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s; }
 
 /* ----------------------------------------
   Boilerplate Cardwrapper
@@ -726,8 +835,10 @@ input[type="radio"] {
   .boilerplate-card:not(:first-child) {
     margin-left: 2rem; }
   .boilerplate-card--nested-links {
-    width: 33.3333333%;
     min-height: 300px; }
+    @media (min-width: 600px) {
+      .boilerplate-card--nested-links {
+        width: 33.3333333%; } }
     .boilerplate-card--nested-links:hover {
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
       .boilerplate-card--nested-links:hover img {
@@ -761,6 +872,28 @@ input[type="radio"] {
       color: #C8285C; }
       .boilerplate-card--nested-links__category .category__link:hover {
         color: #0a4d60; }
+  .boilerplate-card--truncate {
+    max-width: 300px; }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.truncate-multiline {
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 400px;
+  height: calc($font-size * $line-height * $lines);
+  /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.4em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .image-cover--wrap {
   width: 100%;
@@ -768,7 +901,7 @@ input[type="radio"] {
   overflow: hidden;
   position: relative; }
   .image-cover--wrap img {
-    transition: all 0.5s cubic-bezier(0.28, 0.475, 0.445, 0.675); }
+    transition: all 0.5s cubic-bezier(0.28, 0.475, 0.445, 0.675) 0s; }
 
 /* ----------------------------------------
   Color card
@@ -787,11 +920,14 @@ input[type="radio"] {
   CSS loader card
 ---------------------------------------- */
 .boilerplate-card--loader-card {
-  width: 33.3333333%;
+  width: 50%;
   min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center; }
+  @media (min-width: 600px) {
+    .boilerplate-card--loader-card {
+      width: 33.3333333%; } }
 
 .boilerplate-card--themecombi {
   padding: 0; }
@@ -810,7 +946,7 @@ input[type="radio"] {
   .boilerplate-social__item svg {
     width: 1em;
     height: 1em;
-    transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915); }
+    transition: all 0.2s cubic-bezier(0, 0.325, 0.375, 0.915) 0s; }
   .boilerplate-social__item svg * {
     fill: #C8285C; }
   .boilerplate-social__item:hover svg * {
@@ -835,6 +971,11 @@ input[type="radio"] {
 .boilerplate-section__title {
   padding: 1rem;
   padding-top: 0; }
+  .boilerplate-section__title h1 {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
 
 .boilerplate-hero {
   height: 100vh;
@@ -842,7 +983,8 @@ input[type="radio"] {
   color: #ffffff;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  padding: 0 2rem; }
   .boilerplate-hero h1 {
     color: #ffffff;
     font-weight: 700; }
@@ -854,15 +996,23 @@ input[type="radio"] {
 
 .boilerplate-column--description {
   flex: 0 1 auto;
-  width: 25%;
+  width: 100%;
   padding: 1rem; }
+  @media (min-width: 600px) {
+    .boilerplate-column--description {
+      flex: 0 1 auto;
+      width: 25%; } }
 
 .boilerplate-column--content {
   padding: 2rem;
   flex: 0 1 auto;
-  width: 75%;
+  width: 100%;
   background: #f6f6f6;
   border-radius: 5px; }
+  @media (min-width: 600px) {
+    .boilerplate-column--content {
+      flex: 0 1 auto;
+      width: 75%; } }
 
 .boilerplate-column--content__row {
   padding: 1em 0;
