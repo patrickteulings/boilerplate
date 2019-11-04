@@ -11,6 +11,8 @@
   },
   "rules": {
     "no-console": "off",
+    "require-jsdoc": "off",
+    "comma-dangle": ["error", "only-multiline"],
     "strict": ["error", "global"],
     "curly": "warn",
     "space-before-blocks": ["error", "always"],

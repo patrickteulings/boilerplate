@@ -14,8 +14,6 @@
 
 @mixin mq($breakpoint, $from, $breakpointto:6000) {
 
-  @warn #{$from};
-
   @if map-has-key($breakpoints, $breakpoint) {
     @if $from == 'min' {
       @media (min-width: map-get($breakpoints, $breakpoint)) {

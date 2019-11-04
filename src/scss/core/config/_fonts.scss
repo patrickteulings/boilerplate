@@ -27,6 +27,7 @@ h6 {
 }
 
 h1 {
+  @include font-size(calc(56px * 0.75));
   @include font-size(56px);
 }
 
